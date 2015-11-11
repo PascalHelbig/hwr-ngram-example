@@ -15,15 +15,15 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.post('/prediction', function (req, res) {
-    searchText = req.body.searchText;
-    prediction = ngram.prediction(searchText);
+    var searchText = req.body.searchText;
+    var prediction = ngram.prediction(searchText);
     for (var i = 0; i < prediction.length; i++) {
         prediction[i] = searchText + ' ' + prediction[i];
     }
     res.send(prediction);
 });
 
-var server = app.listen(3000, function () {
+app.listen(3000, function () {
     console.log('Example app listening at http://localhost:3000');
 });
 
