@@ -31,7 +31,7 @@ app.listen(3000, function () {
  * NGRAM:
  */
 
-var bar = new ProgressBar('analyse [:bar] :percent', {total: 100000, width: 50});
+var bar = new ProgressBar('analyze [:bar] :percent', {total: 100000, width: 50});
 var rl = require('readline').createInterface({
     input: require('fs').createReadStream(FILENAME)
 });
